@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "sUoRLFNvvvA=",
+  "dgSpecHash": "t0LnYpqyTawyH2qHmS6Iagp9uW9BtwNT+EU/YIhaT/g70jVm8lWfL+i1HucJK7C2r1NjzjTI8jdo9G7heOB7xQ==",
   "success": true,
-  "projectFilePath": "D:\\ATBM_PJ\\UI\\ATBM\\ATBM.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\lhyen\\HCMUS\\3rd_year\\HK2\\ATBM\\PROJECT\\ATBM_Access-Control\\ATBM_PJ\\UI\\ATBM\\ATBM.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\oracle.manageddataaccess.core\\23.8.0\\oracle.manageddataaccess.core.23.8.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.diagnostics.eventlog\\8.0.0\\system.diagnostics.eventlog.8.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.diagnostics.performancecounter\\8.0.0\\system.diagnostics.performancecounter.8.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.directoryservices.protocols\\8.0.0\\system.directoryservices.protocols.8.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.formats.asn1\\8.0.1\\system.formats.asn1.8.0.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.memory\\4.6.0\\system.memory.4.6.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.1\\system.security.cryptography.pkcs.8.0.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.security.cryptography.protecteddata\\8.0.0\\system.security.cryptography.protecteddata.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
