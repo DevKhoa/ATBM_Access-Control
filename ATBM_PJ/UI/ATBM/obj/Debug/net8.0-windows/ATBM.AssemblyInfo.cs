@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ATBM")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e86761e73dac008681f44a0dfaa62cfd96063653")]
 [assembly: System.Reflection.AssemblyProductAttribute("ATBM")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ATBM")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
