@@ -23,23 +23,14 @@
 
             dgvNhanVien = new DataGridView();
             dgvNhanVien.Dock = DockStyle.Fill;
-            dgvNhanVien.ColumnCount = 8;
-            dgvNhanVien.Columns[0].Name = "Mã NV";
-            dgvNhanVien.Columns[1].Name = "Họ tên";
-            dgvNhanVien.Columns[2].Name = "Giới tính";
-            dgvNhanVien.Columns[3].Name = "Ngày sinh";
-            dgvNhanVien.Columns[4].Name = "Lương";
-            dgvNhanVien.Columns[5].Name = "Phụ cấp";
-            dgvNhanVien.Columns[6].Name = "ĐT";
-            dgvNhanVien.Columns[7].Name = "Vai trò";
-            dgvNhanVien.Columns.Add("Mã ĐV", "Mã ĐV");
+            dgvNhanVien.AutoGenerateColumns = true; // Cho phép tự sinh cột từ DataTable
 
             groupBoxDanhSach.Controls.Add(dgvNhanVien);
 
             // GroupBox Thông tin
             groupBoxThongTin = new GroupBox();
             groupBoxThongTin.Text = "Thông tin nhân viên";
-            groupBoxThongTin.SetBounds(20, 230, 720,220);
+            groupBoxThongTin.SetBounds(20, 230, 720, 220);
 
             // TextBox, ComboBox, DateTimePicker
             txtMaNV = new TextBox { Location = new System.Drawing.Point(30, 40), Width = 150 };
@@ -55,7 +46,8 @@
             txtDT = new TextBox { Location = new System.Drawing.Point(470, 40), Width = 150 };
             txtMaDV = new TextBox { Location = new System.Drawing.Point(470, 85), Width = 150 };
 
-            groupBoxThongTin.Controls.AddRange(new Control[] {
+            groupBoxThongTin.Controls.AddRange(new Control[] 
+            {
                 new Label { Text = "Mã nhân viên", Location = new System.Drawing.Point(30, 20) },
                 txtMaNV,
                 new Label { Text = "Họ tên", Location = new System.Drawing.Point(30, 65) },
@@ -91,7 +83,8 @@
             btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
 
-            this.Controls.AddRange(new Control[] {
+            this.Controls.AddRange(new Control[] 
+            {
                 groupBoxDanhSach,
                 groupBoxThongTin,
                 btnThem, btnXoa, btnLuu, btnTimKiem, btnQuayLai
