@@ -228,7 +228,7 @@ namespace ATBM
                         PRIVILEGE,
                         'TABLE_PRIV' AS PRIV_TYPE,
                         GRANTABLE
-                    FROM ALL_TAB_PRIVS
+                    FROM DBA_TAB_PRIVS
                     WHERE (:grantee IS NULL OR GRANTEE = :grantee)
                 ");
                     }
@@ -273,7 +273,7 @@ namespace ATBM
                         PRIVILEGE,
                         'COL_PRIV' AS PRIV_TYPE,
                         GRANTABLE
-                    FROM ALL_COL_PRIVS
+                    FROM DBA_COL_PRIVS
                     WHERE (:grantee IS NULL OR GRANTEE = :grantee)
                 ");
                     }
