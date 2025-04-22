@@ -208,7 +208,7 @@ namespace ATBM
         {
             // Xem quyền của user hoặc role
             string grantee = textBox2.Text.Trim().ToUpper();    // Nhập user hoặc role
-            string typeFilter = textBox3.Text.Trim().ToUpper(); // TAB, SYS, ROLE hoặc trống
+            string typeFilter = textBox3.Text.Trim().ToUpper(); // TAB, SYS, ROLE, COL hoặc trống
 
             try
             {
@@ -230,7 +230,7 @@ namespace ATBM
                         GRANTABLE
                     FROM ALL_TAB_PRIVS
                     WHERE (:grantee IS NULL OR GRANTEE = :grantee)
-                        ");
+                ");
                     }
 
                     // SYSTEM privileges
@@ -245,7 +245,7 @@ namespace ATBM
                         ADMIN_OPTION AS GRANTABLE
                     FROM DBA_SYS_PRIVS
                     WHERE (:grantee IS NULL OR GRANTEE = :grantee)
-                        ");
+                ");
                     }
 
                     // ROLE privileges
@@ -260,7 +260,22 @@ namespace ATBM
                         ADMIN_OPTION AS GRANTABLE
                     FROM DBA_ROLE_PRIVS
                     WHERE (:grantee IS NULL OR GRANTEE = :grantee)
-                        ");
+                ");
+                    }
+
+                    // COLUMN privileges
+                    if (typeFilter == "COL" || string.IsNullOrEmpty(typeFilter))
+                    {
+                        queries.Add(@"
+                    SELECT  
+                        GRANTEE,
+                        TABLE_NAME || '.' || COLUMN_NAME AS OBJECT_NAME,
+                        PRIVILEGE,
+                        'COL_PRIV' AS PRIV_TYPE,
+                        GRANTABLE
+                    FROM ALL_COL_PRIVS
+                    WHERE (:grantee IS NULL OR GRANTEE = :grantee)
+                ");
                     }
 
                     string fullQuery = string.Join(" UNION ALL ", queries) + " ORDER BY GRANTEE, PRIV_TYPE, OBJECT_NAME";
@@ -270,7 +285,6 @@ namespace ATBM
                         BindByName = true
                     };
 
-                    // Dùng giá trị NULL nếu grantee rỗng để không lọc
                     if (string.IsNullOrEmpty(grantee))
                         cmd.Parameters.Add("grantee", OracleDbType.Varchar2).Value = DBNull.Value;
                     else
