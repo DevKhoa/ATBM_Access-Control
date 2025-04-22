@@ -3,88 +3,59 @@
     partial class NhanTB
     {
         private System.ComponentModel.IContainer components = null;
-
-        private System.Windows.Forms.GroupBox groupBoxDanhSach;
-        private System.Windows.Forms.GroupBox groupBoxChiTiet;
-        private System.Windows.Forms.DataGridView dgvThongBao;
-        private System.Windows.Forms.DataGridView dgvChiTiet;
-        private System.Windows.Forms.TextBox txtMaThongBao;
-        private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.Label lblMaThongBao;
         private System.Windows.Forms.Button btnQuayLai;
 
 
         private void InitializeComponent()
         {
-            this.Text = "Nhận thông báo";
-            this.ClientSize = new System.Drawing.Size(850, 650);
-
-            // GroupBox: Danh sách thông báo
-            groupBoxDanhSach = new System.Windows.Forms.GroupBox();
-            groupBoxDanhSach.Text = "Danh sách thông báo";
-            groupBoxDanhSach.SetBounds(20, 40, 800, 200);
-
-            dgvThongBao = new System.Windows.Forms.DataGridView();
-            dgvThongBao.Dock = System.Windows.Forms.DockStyle.Fill;
-            dgvThongBao.ColumnCount = 7;
-            dgvThongBao.Columns[0].Name = "Mã thông báo";
-            dgvThongBao.Columns[1].Name = "Người tạo";
-            dgvThongBao.Columns[2].Name = "Cấp bậc";
-            dgvThongBao.Columns[3].Name = "Lĩnh vực";
-            dgvThongBao.Columns[4].Name = "Cơ sở";
-            dgvThongBao.Columns[5].Name = "Ngày tạo";
-            dgvThongBao.Columns[6].Name = "Trạng thái";
-
-            groupBoxDanhSach.Controls.Add(dgvThongBao);
-
-            // TextBox + Button tìm kiếm
-            lblMaThongBao = new System.Windows.Forms.Label();
-            lblMaThongBao.Text = "Mã thông báo";
-            lblMaThongBao.Location = new System.Drawing.Point(30, 260);
-            lblMaThongBao.Size = new System.Drawing.Size(100, 25);
-
-            txtMaThongBao = new System.Windows.Forms.TextBox();
-            txtMaThongBao.Location = new System.Drawing.Point(130, 255);
-            txtMaThongBao.Size = new System.Drawing.Size(150, 25);
-
-            btnTimKiem = new System.Windows.Forms.Button();
-            btnTimKiem.Text = "Tìm kiếm";
-            btnTimKiem.Location = new System.Drawing.Point(300, 252);
-            btnTimKiem.Size = new System.Drawing.Size(90, 30);
-
-            btnQuayLai = new System.Windows.Forms.Button();
+            btnQuayLai = new Button();
+            dataGridView1 = new DataGridView();
+            button1 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // btnQuayLai
+            // 
+            btnQuayLai.Location = new Point(25, 354);
+            btnQuayLai.Name = "btnQuayLai";
+            btnQuayLai.Size = new Size(90, 30);
+            btnQuayLai.TabIndex = 5;
             btnQuayLai.Text = "Quay lại";
-            btnQuayLai.Location = new System.Drawing.Point(420, 252);
-            btnQuayLai.Size = new System.Drawing.Size(90, 30);
-
-            
-            btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
-            btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
-
-
-            // GroupBox: Chi tiết thông báo
-            groupBoxChiTiet = new System.Windows.Forms.GroupBox();
-            groupBoxChiTiet.Text = "";
-            groupBoxChiTiet.SetBounds(20, 300, 800, 300);
-
-            dgvChiTiet = new System.Windows.Forms.DataGridView();
-            dgvChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
-            dgvChiTiet.ColumnCount = 5;
-            dgvChiTiet.Columns[0].Name = "Mã thông báo";
-            dgvChiTiet.Columns[1].Name = "Người tạo";
-            dgvChiTiet.Columns[2].Name = "Ngày tạo";
-            dgvChiTiet.Columns[3].Name = "Trạng thái";
-            dgvChiTiet.Columns[4].Name = "Nội dung";
-
-            groupBoxChiTiet.Controls.Add(dgvChiTiet);
-
-            // Add controls
-            this.Controls.Add(groupBoxDanhSach);
-            this.Controls.Add(lblMaThongBao);
-            this.Controls.Add(txtMaThongBao);
-            this.Controls.Add(btnTimKiem);
-            this.Controls.Add(groupBoxChiTiet);
-            this.Controls.Add(btnQuayLai);
+            btnQuayLai.Click += btnQuayLai_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(42, 52);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(542, 238);
+            dataGridView1.TabIndex = 6;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(273, 306);
+            button1.Name = "button1";
+            button1.Size = new Size(103, 50);
+            button1.TabIndex = 7;
+            button1.Text = "Xem";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // NhanTB
+            // 
+            ClientSize = new Size(631, 403);
+            Controls.Add(button1);
+            Controls.Add(dataGridView1);
+            Controls.Add(btnQuayLai);
+            Name = "NhanTB";
+            Text = "Nhận thông báo";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
+
+        private DataGridView dataGridView1;
+        private Button button1;
     }
 }
