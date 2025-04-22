@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ATBM
 {
@@ -10,11 +12,9 @@ namespace ATBM
             InitializeComponent();
         }
 
-        // Bạn có thể thêm xử lý button tại đây
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string maTB = txtMaThongBao.Text.Trim();
-            // TODO: Xử lý tìm kiếm và hiển thị dữ liệu chi tiết tương ứng
+
         }
 
         private void btnQuayLai_Click(object sender, EventArgs e)
@@ -24,5 +24,31 @@ namespace ATBM
             this.Close();
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM ADMIN_OLS.THONGBAO";
+
+            try
+            {
+                using OracleConnection conn = OracleHelper.GetConnection();
+                conn.Open();
+
+                using OracleCommand cmd = new OracleCommand(query, conn);
+                using OracleDataAdapter adapter = new OracleDataAdapter(cmd);
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải thông báo: " + ex.Message);
+            }
+        }
     }
 }
