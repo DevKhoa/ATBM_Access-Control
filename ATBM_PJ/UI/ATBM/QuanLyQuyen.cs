@@ -752,7 +752,7 @@ namespace ATBM
                 return;
             }
 
-            using (OracleConnection conn = new OracleConnection("User Id=ADMIN_PJ;Password=123;Data Source=localhost:1521/22127197_470_247;"))
+            using OracleConnection conn = OracleHelper.GetConnection();
             {
                 try
                 {
