@@ -565,9 +565,9 @@
             label5.AutoSize = true;
             label5.Location = new Point(216, 441);
             label5.Name = "label5";
-            label5.Size = new Size(198, 20);
+            label5.Size = new Size(235, 20);
             label5.TabIndex = 132;
-            label5.Text = "Nhập quyền TAB/ SYS/ ROLE";
+            label5.Text = "Nhập quyền TAB/ SYS/ ROLE/ COL";
             label5.Click += label5_Click;
             // 
             // button2
