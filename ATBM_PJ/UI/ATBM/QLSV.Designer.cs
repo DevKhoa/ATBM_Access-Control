@@ -26,17 +26,19 @@
 
             dgvSinhVien = new DataGridView();
             dgvSinhVien.Dock = DockStyle.Fill;
-            dgvSinhVien.ColumnCount = 7;
-            dgvSinhVien.Columns[0].Name = "Mã SV";
-            dgvSinhVien.Columns[1].Name = "Họ tên";
-            dgvSinhVien.Columns[2].Name = "Giới tính";
-            dgvSinhVien.Columns[3].Name = "Ngày sinh";
-            dgvSinhVien.Columns[4].Name = "Địa chỉ";
-            dgvSinhVien.Columns[5].Name = "SDT";
-            dgvSinhVien.Columns.Add("Khoa", "Khoa");
-            dgvSinhVien.Columns.Add("Tình trạng HV", "Tình trạng HV");
+
+            dgvSinhVien.Columns.Add("MASV", "Mã SV");
+            dgvSinhVien.Columns.Add("HOTEN", "Họ tên");
+            dgvSinhVien.Columns.Add("PHAI", "Giới tính");
+            dgvSinhVien.Columns.Add("NGSINH", "Ngày sinh");
+            dgvSinhVien.Columns.Add("DCHI", "Địa chỉ");
+            dgvSinhVien.Columns.Add("DT", "SDT");
+            dgvSinhVien.Columns.Add("KHOA", "Khoa");
+            dgvSinhVien.Columns.Add("TINHTRANG", "Tình trạng HV");
 
             groupBoxDanhSach.Controls.Add(dgvSinhVien);
+
+
 
             // GroupBox Thông tin
             groupBoxThongTin = new GroupBox();
